@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ES2015",
+    "ignoreDeprecations": "5.0"
+  },
+  "typeAcquisition": {
+    "include": ["node"]
+  },
+  "exclude": ["node_modules", "**/node_modules/*"]
+}
