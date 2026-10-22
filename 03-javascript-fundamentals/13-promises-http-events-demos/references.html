@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 13 reference links — JavaScript Fundamentals 2025</title>
+  <style>
+    :root {
+      --pink: #FF1675;
+      --inky: #130F25;
+      --neutral: #F7F5F4;
+      --ada-green: #29826F;
+      --muted: #555555;
+      --rule: #e6e2df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem;
+      color: var(--inky);
+      line-height: 1.55;
+      background: #ffffff;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.25rem;
+      border-bottom: 3px solid var(--pink);
+      padding-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+    .legend {
+      background: var(--neutral);
+      border-left: 4px solid var(--pink);
+      padding: 0.9rem 1rem;
+      font-size: 0.92rem;
+      margin: 0 0 2rem;
+      border-radius: 4px;
+    }
+    .legend code,
+    .legend .new-label {
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: var(--pink);
+      margin: 2.4rem 0 0.4rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+    }
+    h2 .clip-num {
+      color: var(--muted);
+      font-weight: 600;
+      margin-right: 0.4rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+    }
+    li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.75rem;
+    }
+    li:last-child { border-bottom: none; }
+    li .label {
+      font-weight: 600;
+    }
+    li .desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    a {
+      color: var(--ada-green);
+      text-decoration: none;
+    }
+    a:hover, a:focus { text-decoration: underline; }
+    .new-label {
+      display: inline-block;
+      background: var(--pink);
+      color: #ffffff;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .links {
+      margin-left: auto;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+    .links a + a::before {
+      content: "•";
+      color: var(--muted);
+      margin: 0 0.4rem;
+    }
+    code {
+      font-family: "Roboto Mono", "SF Mono", Menlo, Consolas, monospace;
+      background: var(--neutral);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.92em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media (max-width: 600px) {
+      li .links { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Module 13 reference links</h1>
+<p class="subtitle">JavaScript Fundamentals 2025 — Promises, HTTP requests, and event handling</p>
+
+<div class="legend">
+  Each entry links to the <strong>MDN Web Docs</strong> page or Node.js docs for the feature used in this module.
+  Items marked <span class="new-label">New</span> are recent additions to JavaScript — follow the <strong>caniuse</strong> link to check support in your target browsers and Node.js versions.
+</div>
+
+<h2><span class="clip-num">Clip 1</span> Modern promise helpers and combinators</h2>
+<ul>
+  <li>
+    <span class="label"><code>Promise.try()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2025</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/try" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_promise_try" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Promise.withResolvers()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2024</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/withResolvers" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_promise_withresolvers" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Promise.all()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Promise.allSettled()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2020</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_promise_allsettled" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Promise.any()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2021</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_promise_any" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Promise.race()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 2</span> Making HTTP requests</h2>
+<ul>
+  <li>
+    <span class="label"><code>fetch()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Response</code></span>
+    <span class="desc">includes <code>status</code>, <code>ok</code>, <code>json()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Response.json()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response/json" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.isArray()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>AbortController</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortController" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 3</span> Concurrent promises</h2>
+<ul>
+  <li>
+    <span class="label"><code>Promise.all()</code></span>
+    <span class="desc">fail-fast concurrency</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Promise.allSettled()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2020 — partial success</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_promise_allsettled" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Using promises (guide)</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank" rel="noopener">MDN guide</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 4</span> Asynchronous file operations</h2>
+<ul>
+  <li>
+    <span class="label"><code>node:fs/promises</code></span>
+    <span class="links">
+      <a href="https://nodejs.org/api/fs.html#promises-api" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>fsPromises.readFile()</code></span>
+    <span class="links">
+      <a href="https://nodejs.org/api/fs.html#fspromisesreadfilepath-options" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>fsPromises.writeFile()</code></span>
+    <span class="links">
+      <a href="https://nodejs.org/api/fs.html#fspromiseswritefilefile-data-options" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>JSON.stringify()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>JSON.parse()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Error.cause</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2022</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_error_cause" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 5</span> Event handling</h2>
+<ul>
+  <li>
+    <span class="label">Event-driven programming</span>
+    <span class="desc">browser and Node.js patterns</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank" rel="noopener">MDN Web Events</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 6</span> Using event handling</h2>
+<ul>
+  <li>
+    <span class="label"><code>EventEmitter</code></span>
+    <span class="desc">Node.js built-in</span>
+    <span class="links">
+      <a href="https://nodejs.org/api/events.html#class-eventemitter" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>EventEmitter.on()</code></span>
+    <span class="links">
+      <a href="https://nodejs.org/api/events.html#emitteroneventname-listener" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>EventEmitter.emit()</code></span>
+    <span class="links">
+      <a href="https://nodejs.org/api/events.html#emitteremiteventname-args" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+</ul>
+
+<footer>
+  JavaScript Fundamentals 2025 · Module 13 · Reference compiled against the Node.js 24 LTS baseline.
+</footer>
+
+</body>
+</html>

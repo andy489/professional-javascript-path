@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 16 reference links — JavaScript Fundamentals 2025</title>
+  <style>
+    :root {
+      --pink: #FF1675;
+      --inky: #130F25;
+      --neutral: #F7F5F4;
+      --ada-green: #29826F;
+      --muted: #555555;
+      --rule: #e6e2df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem;
+      color: var(--inky);
+      line-height: 1.55;
+      background: #ffffff;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.25rem;
+      border-bottom: 3px solid var(--pink);
+      padding-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+    .legend {
+      background: var(--neutral);
+      border-left: 4px solid var(--pink);
+      padding: 0.9rem 1rem;
+      font-size: 0.92rem;
+      margin: 0 0 2rem;
+      border-radius: 4px;
+    }
+    .legend code,
+    .legend .new-label {
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: var(--pink);
+      margin: 2.4rem 0 0.4rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+    }
+    h2 .clip-num {
+      color: var(--muted);
+      font-weight: 600;
+      margin-right: 0.4rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+    }
+    li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.75rem;
+    }
+    li:last-child { border-bottom: none; }
+    li .label {
+      font-weight: 600;
+    }
+    li .desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    a {
+      color: var(--ada-green);
+      text-decoration: none;
+    }
+    a:hover, a:focus { text-decoration: underline; }
+    .new-label {
+      display: inline-block;
+      background: var(--pink);
+      color: #ffffff;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .links {
+      margin-left: auto;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+    .links a + a::before {
+      content: "•";
+      color: var(--muted);
+      margin: 0 0.4rem;
+    }
+    code {
+      font-family: "Roboto Mono", "SF Mono", Menlo, Consolas, monospace;
+      background: var(--neutral);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.92em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media (max-width: 600px) {
+      li .links { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Module 16 reference links</h1>
+<p class="subtitle">JavaScript Fundamentals 2025 — Clean, maintainable code and reading existing code</p>
+
+<div class="legend">
+  Each entry links to the <strong>MDN Web Docs</strong> page, vendor documentation, or specification for the feature used in this module.
+  Items marked <span class="new-label">New</span> are recent additions to JavaScript — follow the <strong>caniuse</strong> link to check support in your target runtime.
+</div>
+
+<h2><span class="clip-num">Clip 1</span> What makes code maintainable?</h2>
+<ul>
+  <li>
+    <span class="label">JavaScript style and naming guide</span>
+    <span class="desc">MDN guidelines</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript" target="_blank" rel="noopener">MDN guide</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 2</span> Reading existing JavaScript code</h2>
+<ul>
+  <li>
+    <span class="label"><code>package.json</code></span>
+    <span class="links">
+      <a href="https://docs.npmjs.com/cli/v10/configuring-npm/package-json" target="_blank" rel="noopener">npm docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>var</code> declaration</span>
+    <span class="desc">legacy — prefer <code>let</code>/<code>const</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">CommonJS <code>require()</code></span>
+    <span class="desc">legacy module system</span>
+    <span class="links">
+      <a href="https://nodejs.org/api/modules.html#requireid" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Error-first callbacks</span>
+    <span class="desc">historical Node.js pattern</span>
+    <span class="links">
+      <a href="https://nodejs.org/en/learn/asynchronous-work/javascript-asynchronous-programming-and-callbacks" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 3</span> Unit testing review and coverage</h2>
+<ul>
+  <li>
+    <span class="label">Vitest</span>
+    <span class="links">
+      <a href="https://vitest.dev/" target="_blank" rel="noopener">vitest.dev</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Jest</span>
+    <span class="links">
+      <a href="https://jestjs.io/" target="_blank" rel="noopener">jestjs.io</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Vitest coverage</span>
+    <span class="links">
+      <a href="https://vitest.dev/guide/coverage" target="_blank" rel="noopener">Vitest docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Jest coverage</span>
+    <span class="links">
+      <a href="https://jestjs.io/docs/configuration#collectcoverage-boolean" target="_blank" rel="noopener">Jest docs</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 4</span> Code linting and formatting</h2>
+<ul>
+  <li>
+    <span class="label">ESLint</span>
+    <span class="links">
+      <a href="https://eslint.org/" target="_blank" rel="noopener">eslint.org</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">ESLint flat config</span>
+    <span class="links">
+      <a href="https://eslint.org/docs/latest/use/configure/configuration-files" target="_blank" rel="noopener">ESLint docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>@eslint/js</code></span>
+    <span class="links">
+      <a href="https://www.npmjs.com/package/@eslint/js" target="_blank" rel="noopener">npm</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Prettier</span>
+    <span class="links">
+      <a href="https://prettier.io/" target="_blank" rel="noopener">prettier.io</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">ESLint + Prettier in VS Code</span>
+    <span class="desc">course companion guide — install the extensions, set Prettier as the default formatter, enable format-on-save</span>
+    <span class="links">
+      <a href="vs-code-lint-format-setup.html" target="_blank" rel="noopener">Companion guide</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 5</span> Refactoring for clean code</h2>
+<ul>
+  <li>
+    <span class="label">Refactoring guide</span>
+    <span class="desc">general patterns</span>
+    <span class="links">
+      <a href="https://refactoring.guru/refactoring" target="_blank" rel="noopener">refactoring.guru</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Vitest assertions</span>
+    <span class="links">
+      <a href="https://vitest.dev/api/expect.html" target="_blank" rel="noopener">Vitest docs</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 6</span> Modern JavaScript compatibility checklist</h2>
+<ul>
+  <li>
+    <span class="label">ECMAScript specification</span>
+    <span class="links">
+      <a href="https://tc39.es/ecma262/" target="_blank" rel="noopener">tc39.es</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">TC39 proposal stages</span>
+    <span class="desc">tracks where each proposal sits in the standards process</span>
+    <span class="links">
+      <a href="https://github.com/tc39/proposals" target="_blank" rel="noopener">tc39/proposals</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">MDN Web Docs</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">developer.mozilla.org</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">caniuse.com</span>
+    <span class="links">
+      <a href="https://caniuse.com/" target="_blank" rel="noopener">caniuse.com</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Node.js documentation</span>
+    <span class="links">
+      <a href="https://nodejs.org/api/" target="_blank" rel="noopener">nodejs.org</a>
+    </span>
+  </li>
+</ul>
+
+<footer>
+  JavaScript Fundamentals 2025 · Module 16 · Reference compiled against the Node.js 24 LTS baseline.
+</footer>
+
+</body>
+</html>

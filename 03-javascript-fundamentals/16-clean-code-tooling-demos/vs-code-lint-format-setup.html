@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESLint + Prettier in VS Code — JavaScript Fundamentals 2025</title>
+  <style>
+    :root {
+      --pink: #FF1675;
+      --inky: #130F25;
+      --neutral: #F7F5F4;
+      --ada-green: #29826F;
+      --muted: #555555;
+      --rule: #e6e2df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem;
+      color: var(--inky);
+      line-height: 1.6;
+      background: #ffffff;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.25rem;
+      border-bottom: 3px solid var(--pink);
+      padding-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+    .legend {
+      background: var(--neutral);
+      border-left: 4px solid var(--pink);
+      padding: 0.9rem 1rem;
+      font-size: 0.95rem;
+      margin: 0 0 2rem;
+      border-radius: 4px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: var(--pink);
+      margin: 2.4rem 0 0.4rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+    }
+    p {
+      margin: 0.6rem 0;
+    }
+    ol, ul {
+      margin: 0.6rem 0 0.9rem 1.4rem;
+      padding: 0;
+    }
+    li {
+      margin: 0.3rem 0;
+    }
+    a {
+      color: var(--ada-green);
+      text-decoration: none;
+    }
+    a:hover, a:focus { text-decoration: underline; }
+    code {
+      font-family: "Roboto Mono", "SF Mono", Menlo, Consolas, monospace;
+      background: var(--neutral);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.92em;
+    }
+    pre {
+      background: var(--neutral);
+      border-left: 3px solid var(--ada-green);
+      padding: 0.8rem 1rem;
+      overflow-x: auto;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0.8rem 0;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<h1>ESLint + Prettier in VS Code</h1>
+<p class="subtitle">JavaScript Fundamentals 2025 — Module 16 companion guide</p>
+
+<div class="legend">
+  This guide walks through configuring Visual Studio Code so ESLint reports issues in the editor and Prettier formats your files on save. The steps below assume VS Code and the Node.js 24 LTS baseline used in this course, with ESLint and Prettier already installed as dev dependencies in your project (as the <code>lint-demo</code> project in Clip 4 is).
+</div>
+
+<h2>1. Install the ESLint extension</h2>
+<ol>
+  <li>Open VS Code.</li>
+  <li>Open the Extensions view (<code>Cmd+Shift+X</code> on macOS, <code>Ctrl+Shift+X</code> on Windows / Linux).</li>
+  <li>Search for <code>ESLint</code>.</li>
+  <li>Install the extension published by <strong>Microsoft</strong> — the one with millions of downloads.</li>
+</ol>
+<p>Once installed, the ESLint extension reads your project's <code>eslint.config.js</code> and shows warnings and errors right in the editor. Warnings appear as yellow squiggles, errors as red. You can also see the full list in the <strong>Problems</strong> panel (<em>View → Problems</em>, or <code>Cmd+Shift+M</code> / <code>Ctrl+Shift+M</code>).</p>
+
+<h2>2. Install the Prettier extension</h2>
+<ol>
+  <li>Still in the Extensions view, search for <code>Prettier - Code formatter</code>.</li>
+  <li>Install the extension published by <strong>Prettier</strong>.</li>
+</ol>
+<p>The extension uses the version of Prettier installed in your project's <code>node_modules</code>. That means everyone on your team formats with the same version, regardless of which VS Code build they're running.</p>
+
+<h2>3. Set Prettier as the default formatter</h2>
+<ol>
+  <li>Open the Command Palette (<code>Cmd+Shift+P</code> / <code>Ctrl+Shift+P</code>).</li>
+  <li>Run <strong>Preferences: Open User Settings (JSON)</strong>.</li>
+  <li>Add these entries to your user settings:</li>
+</ol>
+<pre><code>{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}</code></pre>
+<p><code>editor.defaultFormatter</code> tells VS Code which extension owns formatting. <code>editor.formatOnSave</code> tells VS Code to run that formatter every time you save. Together they mean Prettier will rewrite your file to the project's style on every <code>Cmd+S</code> / <code>Ctrl+S</code>.</p>
+
+<h2>4. Per-language overrides (optional)</h2>
+<p>If you only want Prettier for JavaScript and TypeScript but leave other languages alone, use per-language overrides instead:</p>
+<pre><code>{
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}</code></pre>
+
+<h2>5. Workspace vs user settings</h2>
+<p>User settings apply to every VS Code window on your machine. Workspace settings apply only to the current project and can be committed to version control so every developer picks them up automatically.</p>
+<p>To set workspace settings for a project, create <code>.vscode/settings.json</code> in the project root:</p>
+<pre><code>{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}</code></pre>
+<p>For a shared codebase, this is usually the better place to configure Prettier and ESLint — the settings ship with the repo, and every developer's editor behaves the same way.</p>
+
+<h2>6. Verify the setup</h2>
+<ol>
+  <li>Open any JavaScript file in your project.</li>
+  <li>Intentionally break the formatting — remove a semicolon, mess up the indentation, squish operators together.</li>
+  <li>Save the file. Prettier should format it back.</li>
+  <li>Declare a variable but never use it. The ESLint extension should underline it in yellow and add an entry to the Problems panel.</li>
+</ol>
+<p>If nothing happens on save, check three things: the extension is enabled (Extensions view → verify it does not have a "Disabled" label); <code>editor.defaultFormatter</code> is set to <code>esbenp.prettier-vscode</code>; and Prettier is installed in your project's <code>node_modules</code> (run <code>npm install</code> if needed).</p>
+
+<h2>Common gotchas</h2>
+<ul>
+  <li><strong>Multiple formatters compete.</strong> If another formatter is enabled (like the built-in JavaScript formatter, or a language-specific one you installed earlier), VS Code may prompt you to pick one every time. Setting <code>editor.defaultFormatter</code> explicitly resolves this.</li>
+  <li><strong>Prettier and ESLint disagree on style.</strong> If you have style-related ESLint rules turned on that Prettier also handles, you'll see redundant warnings. Most projects use <code>eslint-config-prettier</code> to disable the overlapping rules. Check the Prettier docs for setup.</li>
+  <li><strong>Format on save doesn't trigger.</strong> Format-on-save only runs on explicit saves. Auto-save with format-on-save can behave surprisingly — use <code>Cmd+S</code> / <code>Ctrl+S</code> if you want to see Prettier run.</li>
+  <li><strong>The ESLint status bar item is red.</strong> Click it. It usually means ESLint failed to load — often because <code>eslint.config.js</code> has a syntax error, or a dependency is missing. The panel that opens shows the underlying error.</li>
+</ul>
+
+<footer>
+  JavaScript Fundamentals 2025 · Module 16 · Companion guide for editor setup with ESLint and Prettier.
+</footer>
+
+</body>
+</html>

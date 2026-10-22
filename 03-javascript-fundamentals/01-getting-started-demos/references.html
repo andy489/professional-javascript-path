@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 1 reference links — JavaScript Fundamentals 2025</title>
+  <style>
+    :root {
+      --pink: #FF1675;
+      --inky: #130F25;
+      --neutral: #F7F5F4;
+      --ada-green: #29826F;
+      --muted: #555555;
+      --rule: #e6e2df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem;
+      color: var(--inky);
+      line-height: 1.55;
+      background: #ffffff;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.25rem;
+      border-bottom: 3px solid var(--pink);
+      padding-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+    .legend {
+      background: var(--neutral);
+      border-left: 4px solid var(--pink);
+      padding: 0.9rem 1rem;
+      font-size: 0.92rem;
+      margin: 0 0 2rem;
+      border-radius: 4px;
+    }
+    .legend code,
+    .legend .new-label {
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: var(--pink);
+      margin: 2.4rem 0 0.4rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+    }
+    h2 .clip-num {
+      color: var(--muted);
+      font-weight: 600;
+      margin-right: 0.4rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+    }
+    li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.75rem;
+    }
+    li:last-child { border-bottom: none; }
+    li .label {
+      font-weight: 600;
+    }
+    li .desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    a {
+      color: var(--ada-green);
+      text-decoration: none;
+    }
+    a:hover, a:focus { text-decoration: underline; }
+    .new-label {
+      display: inline-block;
+      background: var(--pink);
+      color: #ffffff;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .links {
+      margin-left: auto;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+    .links a + a::before {
+      content: "•";
+      color: var(--muted);
+      margin: 0 0.4rem;
+    }
+    code {
+      font-family: "Roboto Mono", "SF Mono", Menlo, Consolas, monospace;
+      background: var(--neutral);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.92em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media (max-width: 600px) {
+      li .links { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Module 1 reference links</h1>
+<p class="subtitle">JavaScript Fundamentals 2025 — Getting started with JavaScript</p>
+
+<div class="legend">
+  Each entry links to the <strong>MDN Web Docs</strong> page or vendor documentation for the concept, tool, or API introduced in this module.
+  Items marked <span class="new-label">New</span> are recent additions to JavaScript — follow the <strong>caniuse</strong> link to check support in your target runtime. Module 1 is orientation-focused, so most entries here point to tool documentation rather than language features.
+</div>
+
+<h2><span class="clip-num">Clip 1</span> The foundation</h2>
+<ul>
+  <li>
+    <span class="label">JavaScript overview</span>
+    <span class="desc">what the language is and where it runs</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">A re-introduction to JavaScript</span>
+    <span class="desc">MDN's core-concepts tour</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank" rel="noopener">MDN guide</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 2</span> JavaScript versions and modern compatibility</h2>
+<ul>
+  <li>
+    <span class="label">ECMAScript specification</span>
+    <span class="desc">ECMA-262, the formal language standard</span>
+    <span class="links">
+      <a href="https://tc39.es/ecma262/" target="_blank" rel="noopener">tc39.es</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">TC39 proposals</span>
+    <span class="desc">tracks how each new feature progresses through the standards process</span>
+    <span class="links">
+      <a href="https://github.com/tc39/proposals" target="_blank" rel="noopener">tc39/proposals</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">JavaScript engine</span>
+    <span class="desc">V8, JavaScriptCore, SpiderMonkey</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Glossary/JavaScript_engine" target="_blank" rel="noopener">MDN glossary</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">V8</span>
+    <span class="desc">engine that powers Chrome and Node.js</span>
+    <span class="links">
+      <a href="https://v8.dev/" target="_blank" rel="noopener">v8.dev</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Node.js LTS release schedule</span>
+    <span class="desc">which Node.js version is currently supported</span>
+    <span class="links">
+      <a href="https://nodejs.org/en/about/previous-releases" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>var</code> declaration</span>
+    <span class="desc">legacy — you'll still see it in older code</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">CommonJS <code>require()</code></span>
+    <span class="desc">legacy Node.js module system</span>
+    <span class="links">
+      <a href="https://nodejs.org/api/modules.html#requireid" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 3</span> Following along</h2>
+<ul>
+  <li>
+    <span class="label">MDN Web Docs</span>
+    <span class="desc">everyday reference for JavaScript and Web APIs</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">developer.mozilla.org</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Node.js documentation</span>
+    <span class="desc">reference for Node-specific APIs</span>
+    <span class="links">
+      <a href="https://nodejs.org/docs/latest/api/" target="_blank" rel="noopener">nodejs.org</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">CanIUse.com</span>
+    <span class="desc">browser and runtime compatibility tracker</span>
+    <span class="links">
+      <a href="https://caniuse.com/" target="_blank" rel="noopener">caniuse.com</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 4</span> Installing the prerequisites</h2>
+<ul>
+  <li>
+    <span class="label">Node.js download</span>
+    <span class="desc">official installers, including Node.js 24 LTS</span>
+    <span class="links">
+      <a href="https://nodejs.org/en/download" target="_blank" rel="noopener">nodejs.org</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Visual Studio Code download</span>
+    <span class="links">
+      <a href="https://code.visualstudio.com/download" target="_blank" rel="noopener">code.visualstudio.com</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">npm CLI</span>
+    <span class="desc">ships with Node.js</span>
+    <span class="links">
+      <a href="https://docs.npmjs.com/cli/v10/" target="_blank" rel="noopener">npm docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>code</code> command in VS Code</span>
+    <span class="desc">open a folder from the terminal</span>
+    <span class="links">
+      <a href="https://code.visualstudio.com/docs/editor/command-line" target="_blank" rel="noopener">VS Code docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">nvm</span>
+    <span class="desc">Node Version Manager (macOS / Linux)</span>
+    <span class="links">
+      <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm-sh/nvm</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">fnm</span>
+    <span class="desc">Fast Node Manager (cross-platform)</span>
+    <span class="links">
+      <a href="https://github.com/Schniz/fnm" target="_blank" rel="noopener">Schniz/fnm</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Volta</span>
+    <span class="desc">cross-platform Node.js version manager</span>
+    <span class="links">
+      <a href="https://volta.sh/" target="_blank" rel="noopener">volta.sh</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 5</span> Running your first JavaScript code</h2>
+<ul>
+  <li>
+    <span class="label">Node.js REPL</span>
+    <span class="desc">interactive JavaScript shell</span>
+    <span class="links">
+      <a href="https://nodejs.org/api/repl.html" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>node</code> command-line interface</span>
+    <span class="desc">running JavaScript files with <code>node &lt;file.js&gt;</code></span>
+    <span class="links">
+      <a href="https://nodejs.org/api/cli.html" target="_blank" rel="noopener">Node.js docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>console.log()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>let</code> declaration</span>
+    <span class="desc">covered in depth in Module 2</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">String concatenation with <code>+</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 6</span> Debugging preview</h2>
+<ul>
+  <li>
+    <span class="label">Template literals</span>
+    <span class="desc">the <code>`${expression}`</code> syntax</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Debugging in VS Code</span>
+    <span class="desc">breakpoints, stepping, Variables panel, Call Stack, Watch</span>
+    <span class="links">
+      <a href="https://code.visualstudio.com/docs/editor/debugging" target="_blank" rel="noopener">VS Code docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Debugging Node.js in VS Code</span>
+    <span class="desc">running your script under the debugger</span>
+    <span class="links">
+      <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging" target="_blank" rel="noopener">VS Code docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>launch.json</code></span>
+    <span class="desc">VS Code's debugger configuration file</span>
+    <span class="links">
+      <a href="https://code.visualstudio.com/docs/editor/debugging#_launch-configurations" target="_blank" rel="noopener">VS Code docs</a>
+    </span>
+  </li>
+</ul>
+
+<footer>
+  JavaScript Fundamentals 2025 · Module 1 · Reference compiled against the Node.js 24 LTS baseline.
+</footer>
+
+</body>
+</html>

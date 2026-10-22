@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 2 reference links — JavaScript Fundamentals 2025</title>
+  <style>
+    :root {
+      --pink: #FF1675;
+      --inky: #130F25;
+      --neutral: #F7F5F4;
+      --ada-green: #29826F;
+      --muted: #555555;
+      --rule: #e6e2df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem;
+      color: var(--inky);
+      line-height: 1.55;
+      background: #ffffff;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.25rem;
+      border-bottom: 3px solid var(--pink);
+      padding-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+    .legend {
+      background: var(--neutral);
+      border-left: 4px solid var(--pink);
+      padding: 0.9rem 1rem;
+      font-size: 0.92rem;
+      margin: 0 0 2rem;
+      border-radius: 4px;
+    }
+    .legend code,
+    .legend .new-label {
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: var(--pink);
+      margin: 2.4rem 0 0.4rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+    }
+    h2 .clip-num {
+      color: var(--muted);
+      font-weight: 600;
+      margin-right: 0.4rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+    }
+    li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.75rem;
+    }
+    li:last-child { border-bottom: none; }
+    li .label {
+      font-weight: 600;
+    }
+    li .desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    a {
+      color: var(--ada-green);
+      text-decoration: none;
+    }
+    a:hover, a:focus { text-decoration: underline; }
+    .new-label {
+      display: inline-block;
+      background: var(--pink);
+      color: #ffffff;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .links {
+      margin-left: auto;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+    .links a + a::before {
+      content: "•";
+      color: var(--muted);
+      margin: 0 0.4rem;
+    }
+    code {
+      font-family: "Roboto Mono", "SF Mono", Menlo, Consolas, monospace;
+      background: var(--neutral);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.92em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media (max-width: 600px) {
+      li .links { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Module 2 reference links</h1>
+<p class="subtitle">JavaScript Fundamentals 2025 — Syntax, variables, and primitive data types</p>
+
+<div class="legend">
+  Each entry links to the <strong>MDN Web Docs</strong> page for the data type, syntax element, or method used in this module.
+  Items marked <span class="new-label">New</span> are recent additions to JavaScript — follow the <strong>caniuse</strong> link to check support in your target browsers and Node.js versions.
+</div>
+
+<h2><span class="clip-num">Clip 1</span> Syntax</h2>
+<ul>
+  <li>
+    <span class="label">Lexical grammar</span>
+    <span class="desc">statements, expressions, keywords, identifiers, semicolons</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Statements and declarations</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Expressions and operators</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Reserved words</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Automatic semicolon insertion (ASI)</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#automatic_semicolon_insertion" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 2</span> Comments and hashbangs</h2>
+<ul>
+  <li>
+    <span class="label">Comments</span>
+    <span class="desc">single-line <code>//</code> and multi-line <code>/* */</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#comments" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">JSDoc</span>
+    <span class="desc">documentation comments</span>
+    <span class="links">
+      <a href="https://jsdoc.app/" target="_blank" rel="noopener">jsdoc.app</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">ESLint disable comments</span>
+    <span class="links">
+      <a href="https://eslint.org/docs/latest/use/configure/rules#disabling-rules" target="_blank" rel="noopener">ESLint docs</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Hashbang comments <code>#!</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2023</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#hashbang_comments" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_grammar_hashbang_comments" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 3</span> Variables</h2>
+<ul>
+  <li>
+    <span class="label"><code>let</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>const</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>var</code></span>
+    <span class="desc">older pattern — recognize but avoid in new code</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Identifiers and naming</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Glossary/Identifier" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Dynamic typing</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Memory management and garbage collection</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_management" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 4</span> Data types</h2>
+<ul>
+  <li>
+    <span class="label">JavaScript data types overview</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>typeof</code> operator</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>string</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>number</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>bigint</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2020</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/bigint" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>boolean</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>symbol</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>undefined</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>null</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Plain objects</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Map</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Function</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Date</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Error</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Promise</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>RegExp</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Typed arrays</span>
+    <span class="desc">awareness only</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 5</span> Using boolean values</h2>
+<ul>
+  <li>
+    <span class="label"><code>true</code> and <code>false</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Logical NOT <code>!</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 6</span> Creating and using strings</h2>
+<ul>
+  <li>
+    <span class="label"><code>String</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Template literals</span>
+    <span class="desc">backticks, interpolation, multi-line</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">String escape sequences</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#string_literals" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.length</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.at()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2022</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_string_at" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.toUpperCase()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.toLowerCase()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.indexOf()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.includes()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.replace()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.replaceAll()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2021</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_string_replaceall" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.isWellFormed()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2024 — awareness for Unicode strings</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/isWellFormed" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_string_iswellformed" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>String.prototype.toWellFormed()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2024 — awareness for Unicode strings</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toWellFormed" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_string_towellformed" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 7</span> Storing numeric values</h2>
+<ul>
+  <li>
+    <span class="label"><code>Number</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Number.MAX_SAFE_INTEGER</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Number.MIN_SAFE_INTEGER</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Number.isSafeInteger()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Numeric literals</span>
+    <span class="desc">scientific notation, hex, binary, octal</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#numeric_literals" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Numeric separators <code>_</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2021</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#numeric_separators" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_grammar_numeric_separators" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>BigInt</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2020</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/bigint" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Float16Array</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2025 — awareness for typed-array numeric use cases</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float16Array" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_float16array" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+</ul>
+
+<footer>
+  JavaScript Fundamentals 2025 · Module 2 · Reference compiled against the Node.js 24 LTS baseline.
+  Open any link in a new tab. Bookmark this page — it makes a good quick-reference while you work through the module.
+</footer>
+
+</body>
+</html>

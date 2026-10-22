@@ -1,0 +1,12 @@
+{
+  "name": "refactor-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/employees.js",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.0"
+  }
+}

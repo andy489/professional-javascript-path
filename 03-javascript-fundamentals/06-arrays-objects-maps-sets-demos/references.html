@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 6 reference links — JavaScript Fundamentals 2025</title>
+  <style>
+    :root {
+      --pink: #FF1675;
+      --inky: #130F25;
+      --neutral: #F7F5F4;
+      --ada-green: #29826F;
+      --muted: #555555;
+      --rule: #e6e2df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem;
+      color: var(--inky);
+      line-height: 1.55;
+      background: #ffffff;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.25rem;
+      border-bottom: 3px solid var(--pink);
+      padding-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+    .legend {
+      background: var(--neutral);
+      border-left: 4px solid var(--pink);
+      padding: 0.9rem 1rem;
+      font-size: 0.92rem;
+      margin: 0 0 2rem;
+      border-radius: 4px;
+    }
+    .legend code,
+    .legend .new-label {
+      vertical-align: middle;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: var(--pink);
+      margin: 2.4rem 0 0.4rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+    }
+    h2 .clip-num {
+      color: var(--muted);
+      font-weight: 600;
+      margin-right: 0.4rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+    }
+    li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.75rem;
+    }
+    li:last-child { border-bottom: none; }
+    li .label {
+      font-weight: 600;
+    }
+    li .desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    a {
+      color: var(--ada-green);
+      text-decoration: none;
+    }
+    a:hover, a:focus { text-decoration: underline; }
+    .new-label {
+      display: inline-block;
+      background: var(--pink);
+      color: #ffffff;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .links {
+      margin-left: auto;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+    .links a + a::before {
+      content: "•";
+      color: var(--muted);
+      margin: 0 0.4rem;
+    }
+    code {
+      font-family: "Roboto Mono", "SF Mono", Menlo, Consolas, monospace;
+      background: var(--neutral);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.92em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media (max-width: 600px) {
+      li .links { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Module 6 reference links</h1>
+<p class="subtitle">JavaScript Fundamentals 2025 — Arrays, objects, maps, and sets</p>
+
+<div class="legend">
+  Each entry links to the <strong>MDN Web Docs</strong> page for the data structure, method, or operator used in this module.
+  Items marked <span class="new-label">New</span> are recent additions to JavaScript — follow the <strong>caniuse</strong> link to check support in your target browsers and Node.js versions.
+</div>
+
+<h2><span class="clip-num">Clip 1</span> Collection types</h2>
+<ul>
+  <li>
+    <span class="label"><code>Array</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Object</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Map</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Iteration protocols</span>
+    <span class="desc">iterable and iterator definitions</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 2</span> Arrays</h2>
+<ul>
+  <li>
+    <span class="label"><code>Array</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.isArray()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.length</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.at()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2022 — supports negative indexes</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_array_at" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.push()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.unshift()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.pop()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.shift()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 3</span> Finding and copying array data</h2>
+<ul>
+  <li>
+    <span class="label"><code>Array.prototype.find()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.findIndex()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.findLast()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2023</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_array_findlast" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.findLastIndex()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2023</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_array_findlastindex" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.toSorted()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2023 — non-mutating</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_array_tosorted" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.toReversed()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2023 — non-mutating</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_array_toreversed" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.toSpliced()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2023 — non-mutating</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_array_tospliced" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Array.prototype.with()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2023 — non-mutating index replacement</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_array_with" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 4</span> Objects as data structures</h2>
+<ul>
+  <li>
+    <span class="label"><code>Object</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Property accessors</span>
+    <span class="desc">dot and bracket notation for nested data</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Optional chaining <code>?.</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2020</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_operators_optional_chaining" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Nullish coalescing <code>??</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2020</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_operators_nullish_coalescing" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label">Spread syntax (<code>...</code>) in object literals</span>
+    <span class="desc">used here for shallow copies</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 5</span> Map and Set</h2>
+<ul>
+  <li>
+    <span class="label"><code>Map</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Map.prototype.set()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Map.prototype.get()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Map.prototype.has()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Map.prototype.delete()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/delete" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Map.prototype.size</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.add()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.has()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/has" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.delete()</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/delete" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.size</code></span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/size" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>for...of</code> with Maps and Sets</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of" target="_blank" rel="noopener">MDN</a>
+    </span>
+  </li>
+</ul>
+
+<h2><span class="clip-num">Clip 6</span> Set operations</h2>
+<ul>
+  <li>
+    <span class="label"><code>Set.prototype.union()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2025</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/union" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_set_union" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.intersection()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2025</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_set_intersection" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.difference()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2025</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/difference" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_set_difference" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.symmetricDifference()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2025</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/symmetricDifference" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_set_symmetricdifference" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.isSubsetOf()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2025</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSubsetOf" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_set_issubsetof" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.isSupersetOf()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2025</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSupersetOf" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_set_issupersetof" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+  <li>
+    <span class="label"><code>Set.prototype.isDisjointFrom()</code></span>
+    <span class="new-label">New</span>
+    <span class="desc">ES2025</span>
+    <span class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isDisjointFrom" target="_blank" rel="noopener">MDN</a>
+      <a href="https://caniuse.com/mdn-javascript_builtins_set_isdisjointfrom" target="_blank" rel="noopener">caniuse</a>
+    </span>
+  </li>
+</ul>
+
+<footer>
+  JavaScript Fundamentals 2025 · Module 6 · Reference compiled against the Node.js 24 LTS baseline.
+  Open any link in a new tab. Bookmark this page — it makes a good quick-reference while you work through the module.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+[
+  { "id": "E-1001", "firstName": "David", "lastName": "Tucker", "department": "Engineering", "isActive": true },
+  { "id": "E-1002", "firstName": "Sarah", "lastName": "Smith", "department": "Product", "isActive": false },
+  { "id": "E-1003", "firstName": "Mina", "lastName": "Patel", "department": "Engineering", "isActive": true }
+]
