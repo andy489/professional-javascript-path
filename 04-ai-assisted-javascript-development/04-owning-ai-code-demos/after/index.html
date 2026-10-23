@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Prioritizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Task Prioritizer</h1>
+
+    <section class="add-task">
+      <label for="task-input">Task</label>
+      <input type="text" id="task-input" placeholder="What needs to get done?">
+
+      <label for="priority-select">Priority</label>
+      <select id="priority-select">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+
+      <button type="button" id="add-button">Add</button>
+    </section>
+
+    <section class="filter-tasks">
+      <label for="filter-select">Show</label>
+      <select id="filter-select">
+        <option value="all">All</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </section>
+
+    <p id="summary"></p>
+
+    <ul id="task-list"></ul>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
