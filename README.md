@@ -14,6 +14,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 06 | [JavaScript Arrays and Objects](06-javascript-arrays-objects/README.md) | Prototype chains, property descriptors, reference semantics, deep copying, array manipulation, and functional iteration patterns |
 | 07 | [JavaScript Strings and Regular Expressions](07-javascript-strings-regular-expressions/README.md) | Quote styles, template literals, Unicode, String API, substringing, .at(), regex flags, match/replace |
 | 08 | [JavaScript Functions](08-functions-javascript/README.md) | Defining functions, passing data, methods/getters/setters, scope and closure, `this`, async/await |
+| 09 | [JavaScript Error Handling](09-javascript-error-handling/README.md) | Error taxonomy, runtime errors, built-in error types, `try/catch/finally`, custom errors, async error handling |
 
 ## Usage
 
