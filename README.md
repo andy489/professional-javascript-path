@@ -15,6 +15,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 07 | [JavaScript Strings and Regular Expressions](07-javascript-strings-regular-expressions/README.md) | Quote styles, template literals, Unicode, String API, substringing, .at(), regex flags, match/replace |
 | 08 | [JavaScript Functions](08-functions-javascript/README.md) | Defining functions, passing data, methods/getters/setters, scope and closure, `this`, async/await |
 | 09 | [JavaScript Error Handling](09-javascript-error-handling/README.md) | Error taxonomy, runtime errors, built-in error types, `try/catch/finally`, custom errors, async error handling |
+| 10 | [JavaScript: Looping and Branching](10-javascript-looping-branching/README.md) | `for`, `for-of`, `forEach()`, `while`, `do-while`, iterables, sparse arrays, `for-in`, `for-await-of`, performance, `switch`, ternary, nullish coalescing (`??`) |
 
 ## Usage
 
