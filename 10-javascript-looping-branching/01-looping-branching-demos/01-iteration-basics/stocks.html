@@ -140,6 +140,96 @@
    const rows = table.getElementsByTagName('tr');
 
    let stockData = [];
+   for(let i = 1; i < rows.length; i++) {
+      stockData.push(rows[i].innerText.split('\t'));
+   }
+   console.log(stockData);
+
+   let stockData_2 = [];
+   for(let row of rows) {
+      stockData_2.push(row.innerText.split('\t'));
+   }
+   console.log("For-of:", stockData_2);
+
+   let stockData_3 = [];
+   for(let [index, row] of Array.from(rows).entries()) {
+      if(index === 0) {
+         continue;
+      }
+      stockData_3.push(row.innerText.split('\t'));
+   }
+   console.log("For-of (without headers):", stockData_3);
+
+   let stockData_4 = [];
+   const tableWithoutHeaders = Array.from(rows).slice(1);
+   for(let row of tableWithoutHeaders) {
+      stockData_4.push(row.innerText.split('\t'));
+   }
+   console.log("For-of (simpler):", stockData_4);
+
+   let output = '';
+   for(let stock of stockData_4) {
+      const symbol = stock.at(1);
+      const price = stock.at(5);
+
+      output += `${symbol} is currently trading at ${price}\n`;
+   }
+
+   console.log(output);
+
+   const marketCaps = new Map();
+   for(const stock of stockData_4) {
+      const name = stock.at(0);
+      const marketCap = Number(stock.at(3)) * Number(stock.at(4));
+      marketCaps.set(name, marketCap);
+   }
+
+   console.log(marketCaps);
+
+   const megaCaps = [];
+   const megaCapLimit = 200;
+   for(const company of marketCaps) {
+      if(company[1] > megaCapLimit) {
+         megaCaps.push(company[0]);
+      }
+   }
+
+   console.log(`Large Cap companies: ${megaCaps}`);
+
+   stockData_4.forEach(printBeta);
+   function printBeta(stock) {
+      console.log(Number(stock.at(5)));
+   }
+
+   console.log("Low-beta stocks (< 1):");
+
+   const lowBetaStocks = stockData_4
+   .filter(stock => stock.at(5) < 1);
+
+   console.log(lowBetaStocks)
+
+   console.log("Low-beta stocks 2:");
+
+   const lowBetaStocks_2 = stockData_4
+   .filter(stock => stock.at(5) < 1)
+   .map(stock => `${stock.at(0)} with Beta ${stock.at(5)}`);
+
+   console.log(lowBetaStocks_2);
+
+   function name(stock) {
+      return stock.at(0);
+   }
+
+   function beta(stock) {
+      return stock.at(5);
+   }
+
+   const lowBetaStocks_3 = stockData_4
+   .filter(stock => beta(stock) && beta(stock) < 1)
+   .map(stock => `${name(stock)} with Beta ${beta(stock)}`);
+
+   console.log(lowBetaStocks_3);
 
 </script>
+<script type="text/javascript" src="../03-branching/_4coalescing.js"></script>
 </html>
