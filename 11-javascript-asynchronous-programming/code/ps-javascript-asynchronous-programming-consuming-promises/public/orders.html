@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
     <title>Carved Rock Fitness</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
@@ -149,7 +150,8 @@
                         services.</div>
                 </div>
             </div>
-            <div class="crf-footer--copyright text-primary">@Pluralsight 2018-2023</div>
+            <div class="crf-footer--copyright text-primary">@Pluralsight <span id="footer-year"></span></div>
+        <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
         </footer>
     </div>
 </body>
