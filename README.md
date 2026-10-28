@@ -17,6 +17,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 09 | [JavaScript Error Handling](09-javascript-error-handling/README.md) | Error taxonomy, runtime errors, built-in error types, `try/catch/finally`, custom errors, async error handling |
 | 10 | [JavaScript: Looping and Branching](10-javascript-looping-branching/README.md) | `for`, `for-of`, `forEach()`, `while`, `do-while`, iterables, sparse arrays, `for-in`, `for-await-of`, performance, `switch`, ternary, nullish coalescing (`??`) |
 | 11 | [JavaScript Asynchronous Programming](11-javascript-asynchronous-programming/README.md) | Callback pyramid of doom, Promise states, `.then()`/`.catch()`/`.finally()`, `Promise.all/allSettled/any/race`, creating promises, `async`/`await` |
+| 12 | [JavaScript Network Requests](12-javascript-network-requests/README.md) | Fetch API, Axios, XMLHttpRequest, WebSockets — GET/POST, error handling, AbortController, streaming, CORS, real-time push |
 
 ## Usage
 
