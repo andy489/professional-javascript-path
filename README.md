@@ -19,6 +19,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 11 | [JavaScript Asynchronous Programming](11-javascript-asynchronous-programming/README.md) | Callback pyramid of doom, Promise states, `.then()`/`.catch()`/`.finally()`, `Promise.all/allSettled/any/race`, creating promises, `async`/`await` |
 | 12 | [JavaScript Network Requests](12-javascript-network-requests/README.md) | Fetch API, Axios, XMLHttpRequest, WebSockets — GET/POST, error handling, AbortController, streaming, CORS, real-time push |
 | 13 | [JavaScript Modules](13-javascript-modules/README.md) | ES Modules, CommonJS, AMD, UMD — module syntax, Node.js module system, bundlers, tree shaking, native browser modules |
+| 14 | [JavaScript npm/yarn Package Management](14-javascript-npm-yarn-package-management/README.md) | Package manager concepts, npm and Yarn workflows, `package.json`, lockfiles, scripts, publishing, and Yarn's zero-install architecture |
 
 ## Usage
 
