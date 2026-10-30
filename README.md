@@ -21,6 +21,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 13 | [JavaScript Modules](13-javascript-modules/README.md) | ES Modules, CommonJS, AMD, UMD — module syntax, Node.js module system, bundlers, tree shaking, native browser modules |
 | 14 | [JavaScript npm/yarn Package Management](14-javascript-npm-yarn-package-management/README.md) | Package manager concepts, npm and Yarn workflows, `package.json`, lockfiles, scripts, publishing, and Yarn's zero-install architecture |
 | 15 | [JavaScript Unit Testing with Jest](15-javascript-unit-testing-jest/README.md) | Jest setup, common matchers, mocks and spies, async testing, and code coverage |
+| 16 | [Building a REST API in JavaScript with Express](16-javascript-express-building-rest-api/README.md) | REST concepts, Node.js + Express setup, design principles, planning, and testing with Postman and curl |
 
 ## Usage
 
