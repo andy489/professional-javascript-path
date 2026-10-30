@@ -20,6 +20,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 12 | [JavaScript Network Requests](12-javascript-network-requests/README.md) | Fetch API, Axios, XMLHttpRequest, WebSockets — GET/POST, error handling, AbortController, streaming, CORS, real-time push |
 | 13 | [JavaScript Modules](13-javascript-modules/README.md) | ES Modules, CommonJS, AMD, UMD — module syntax, Node.js module system, bundlers, tree shaking, native browser modules |
 | 14 | [JavaScript npm/yarn Package Management](14-javascript-npm-yarn-package-management/README.md) | Package manager concepts, npm and Yarn workflows, `package.json`, lockfiles, scripts, publishing, and Yarn's zero-install architecture |
+| 15 | [JavaScript Unit Testing with Jest](15-javascript-unit-testing-jest/README.md) | Jest setup, common matchers, mocks and spies, async testing, and code coverage |
 
 ## Usage
 
