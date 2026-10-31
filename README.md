@@ -22,6 +22,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 14 | [JavaScript npm/yarn Package Management](14-javascript-npm-yarn-package-management/README.md) | Package manager concepts, npm and Yarn workflows, `package.json`, lockfiles, scripts, publishing, and Yarn's zero-install architecture |
 | 15 | [JavaScript Unit Testing with Jest](15-javascript-unit-testing-jest/README.md) | Jest setup, common matchers, mocks and spies, async testing, and code coverage |
 | 16 | [Building a REST API in JavaScript with Express](16-javascript-express-building-rest-api/README.md) | REST concepts, Node.js + Express setup, design principles, planning, and testing with Postman and curl |
+| 17 | [AI-Native Backend Engineering with JavaScript](17-ai-native-backend-engineering-javascript/README.md) | Schema-first validation with Zod, LLM output validation with retry loops, intent-driven routing, Model Context Protocol (MCP), and the agentic Plan → Act → Observe → Reflect lifecycle |
 
 ## Usage
 
