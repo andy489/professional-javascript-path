@@ -16,16 +16,27 @@ All five modules are consolidated into a single notebook:
 | 04 | Model Context Protocol (MCP) |
 | 05 | The Agentic Lifecycle Pattern |
 
-## Demo Project
+## Code
 
-[`supportflow-ai/`](supportflow-ai/) — the complete backend application built throughout the course.
+All code snapshots live in [`code/`](code/):
+
+| Folder | Branch | Description |
+|---|---|---|
+| [`code/supportflow-ai/`](code/supportflow-ai/) | `main` | Complete project |
+| [`code/supportflow-ai-module-1/`](code/supportflow-ai-module-1/) | `module-1` | After Module 1 |
+| [`code/supportflow-ai-module-2/`](code/supportflow-ai-module-2/) | `module-2` | After Module 2 |
+| [`code/supportflow-ai-module-3/`](code/supportflow-ai-module-3/) | `module-3` | After Module 3 |
+| [`code/supportflow-ai-module-4/`](code/supportflow-ai-module-4/) | `module-4` | After Module 4 |
+| [`code/supportflow-ai-module-5/`](code/supportflow-ai-module-5/) | `module-5` | After Module 5 |
+
+### Running the project
 
 ```bash
-cd supportflow-ai
+cd code/supportflow-ai        # or any module snapshot
 npm install
-cp .env.example .env   # add ANTHROPIC_API_KEY
-node server.js          # REST API on http://localhost:3000
-node src/mcp/mcp-server.js   # MCP stdio server
+cp .env.example .env          # set ANTHROPIC_API_KEY inside .env
+node server.js                # REST API on http://localhost:3000
+node src/mcp/mcp-server.js    # MCP stdio server (module 4+)
 ```
 
 ## Diagrams
