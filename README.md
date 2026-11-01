@@ -26,6 +26,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 18 | [AI-Native Backend Engineering with JavaScript](18-ai-native-backend-engineering-javascript/README.md) | Schema-first validation with Zod, LLM output validation with retry loops, intent-driven routing, Model Context Protocol (MCP), and the agentic Plan → Act → Observe → Reflect lifecycle |
 | 19 | [Building a Web Application with JavaScript](19-javascript-building-web-application/README.md) | Planning, HTML/CSS layout, JavaScript CRUD functionality, and publishing a full-stack Node.js/Express/MySQL web app |
 | 20 | [JavaScript: Creating and Using Decorators](20-javascript-creating-using-decorators/README.md) | Decorator proposal (TC39 Stage 3), method/class/property/accessor/auto-accessor decorators, decorator libraries, web framework with DI and metadata-driven validation |
+| 21 | [Object-oriented Concepts in JavaScript](21-javascript-object-oriented-concepts/README.md) | OOP concepts (encapsulation, composition, inheritance, polymorphism), prototype chain, constructor functions, and ES6 classes with private fields |
 
 ## Usage
 
