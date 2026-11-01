@@ -19,13 +19,13 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 11 | [JavaScript Asynchronous Programming](11-javascript-asynchronous-programming/README.md) | Callback pyramid of doom, Promise states, `.then()`/`.catch()`/`.finally()`, `Promise.all/allSettled/any/race`, creating promises, `async`/`await` |
 | 12 | [JavaScript Network Requests](12-javascript-network-requests/README.md) | Fetch API, Axios, XMLHttpRequest, WebSockets — GET/POST, error handling, AbortController, streaming, CORS, real-time push |
 | 13 | [JavaScript Modules](13-javascript-modules/README.md) | ES Modules, CommonJS, AMD, UMD — module syntax, Node.js module system, bundlers, tree shaking, native browser modules |
-| 14 | [JavaScript npm/yarn Package Management](14-javascript-npm-yarn-package-management/README.md) | Package manager concepts, npm and Yarn workflows, `package.json`, lockfiles, scripts, publishing, and Yarn's zero-install architecture |
-| 15 | [JavaScript Unit Testing with Jest](15-javascript-unit-testing-jest/README.md) | Jest setup, common matchers, mocks and spies, async testing, and code coverage |
-| 16 | [Building a REST API in JavaScript with Express](16-javascript-express-building-rest-api/README.md) | REST concepts, Node.js + Express setup, design principles, planning, and testing with Postman and curl |
-| 17 | [AI-Native Backend Engineering with JavaScript](17-ai-native-backend-engineering-javascript/README.md) | Schema-first validation with Zod, LLM output validation with retry loops, intent-driven routing, Model Context Protocol (MCP), and the agentic Plan → Act → Observe → Reflect lifecycle |
-| 18 | [Building a Web Application with JavaScript](18-javascript-building-web-application/README.md) | Planning, HTML/CSS layout, JavaScript CRUD functionality, and publishing a full-stack Node.js/Express/MySQL web app |
-| 19 | [JavaScript: Creating and Using Decorators](19-javascript-creating-using-decorators/README.md) | Decorator proposal (TC39 Stage 3), method/class/property/accessor/auto-accessor decorators, decorator libraries, web framework with DI and metadata-driven validation |
-| 20 | [JavaScript in the Browser](javascript-browser/README.md) | DOM fundamentals, DOM manipulation, event handling, mouse and keyboard events, HTML form handling |
+| 14 | [JavaScript in the Browser](14-javascript-in-the-browser/README.md) | DOM fundamentals, DOM manipulation, event handling, mouse and keyboard events, HTML form handling |
+| 15 | [JavaScript npm/yarn Package Management](15-javascript-npm-yarn-package-management/README.md) | Package manager concepts, npm and Yarn workflows, `package.json`, lockfiles, scripts, publishing, and Yarn's zero-install architecture |
+| 16 | [JavaScript Unit Testing with Jest](16-javascript-unit-testing-jest/README.md) | Jest setup, common matchers, mocks and spies, async testing, and code coverage |
+| 17 | [Building a REST API in JavaScript with Express](17-javascript-express-building-rest-api/README.md) | REST concepts, Node.js + Express setup, design principles, planning, and testing with Postman and curl |
+| 18 | [AI-Native Backend Engineering with JavaScript](18-ai-native-backend-engineering-javascript/README.md) | Schema-first validation with Zod, LLM output validation with retry loops, intent-driven routing, Model Context Protocol (MCP), and the agentic Plan → Act → Observe → Reflect lifecycle |
+| 19 | [Building a Web Application with JavaScript](19-javascript-building-web-application/README.md) | Planning, HTML/CSS layout, JavaScript CRUD functionality, and publishing a full-stack Node.js/Express/MySQL web app |
+| 20 | [JavaScript: Creating and Using Decorators](20-javascript-creating-using-decorators/README.md) | Decorator proposal (TC39 Stage 3), method/class/property/accessor/auto-accessor decorators, decorator libraries, web framework with DI and metadata-driven validation |
 
 ## Usage
 
