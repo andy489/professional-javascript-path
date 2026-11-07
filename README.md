@@ -28,6 +28,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 20 | [JavaScript: Creating and Using Decorators](20-javascript-creating-using-decorators/README.md) | Decorator proposal (TC39 Stage 3), method/class/property/accessor/auto-accessor decorators, decorator libraries, web framework with DI and metadata-driven validation |
 | 21 | [Object-oriented Concepts in JavaScript](21-javascript-object-oriented-concepts/README.md) | OOP concepts (encapsulation, composition, inheritance, polymorphism), prototype chain, constructor functions, and ES6 classes with private fields |
 | 22 | [Functional Programming Concepts in JavaScript](22-javascript-functional-programming-concepts/README.md) | FP paradigm, pure functions, closures, function composition with Ramda, built-in array methods, recursion, higher-order functions, currying, and FP in React and Svelte |
+| 23 | [Modern JavaScript: The Efficiency Upgrade](23-modern-javascript-efficiency-upgrade/README.md) | Template literals, tagged templates, control flow patterns, Promise.try/allSettled/using, iteration methods, Map/Set/WeakMap/WeakSet, closures, function factories, and currying |
 
 ## Usage
 
