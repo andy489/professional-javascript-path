@@ -29,6 +29,8 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 21 | [Object-oriented Concepts in JavaScript](21-javascript-object-oriented-concepts/README.md) | OOP concepts (encapsulation, composition, inheritance, polymorphism), prototype chain, constructor functions, and ES6 classes with private fields |
 | 22 | [Functional Programming Concepts in JavaScript](22-javascript-functional-programming-concepts/README.md) | FP paradigm, pure functions, closures, function composition with Ramda, built-in array methods, recursion, higher-order functions, currying, and FP in React and Svelte |
 | 23 | [Modern JavaScript: The Efficiency Upgrade](23-modern-javascript-efficiency-upgrade/README.md) | Template literals, tagged templates, control flow patterns, Promise.try/allSettled/using, iteration methods, Map/Set/WeakMap/WeakSet, closures, function factories, and currying |
+| 24 | [JavaScript Performance Playbook](24-javascript-performance-playbook/README.md) | Best practices, legacy modernisation, memory leaks, DOM optimisation, variable scope, sync vs. async, throttling/debouncing, caching, and compression |
+| 25 | [JavaScript Transpiling and Polyfills for Extended Support](25-javascript-transpiling-polyfills-extended-support/README.md) | Transpiling ES6+ to ES5 with Babel, polyfilling missing built-ins with core-js, and TypeScript transpilation with Webpack |
 
 ## Usage
 
