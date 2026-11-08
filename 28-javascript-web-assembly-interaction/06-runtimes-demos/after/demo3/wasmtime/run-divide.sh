@@ -1,0 +1,1 @@
+wasmtime --invoke divide divide.wasm 4 2

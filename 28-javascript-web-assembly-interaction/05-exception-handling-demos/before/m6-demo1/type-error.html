@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebAssembly Exception Handling</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly Exception: TypeError</h1>
+    </header>
+    <main></main>
+    <script>
+       
+let importObject = {};
+let instance;
+function instantiate() {
+    WebAssembly.instantiateStreaming(fetch('imports.wasm'), importObject)
+        .then(result => {
+            instance = result.instance;
+        })
+        .catch(error => {
+            if(error instanceof TypeError) {
+                console.log(`TypeError: ${error.message}`)
+            }
+
+        })
+}
+        
+    </script>
+</body>
+
+</html>

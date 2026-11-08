@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebAssembly Exceptions at Runtime</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly Exceptions at Runtime</h1>
+    </header>
+    <main></main>
+    <script>
+        let instance;
+        function instantiate() {
+            const fp = fetch('divide.wasm');
+            WebAssembly.instantiateStreaming(fp)
+                .then(result => {
+                    instance = result.instance;
+                });
+        }
+
+        function divide(num, denom) {
+            const result = instance.exports.divide(num, denom);
+            console.log(`${num}/${denom} is ${result}`);
+        }
+
+    </script>
+</body>
+
+</html>

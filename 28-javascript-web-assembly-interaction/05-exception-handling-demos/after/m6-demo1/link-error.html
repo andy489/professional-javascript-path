@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebAssembly.Memory</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly Exception: LinkException</h1>
+    </header>
+    <main></main>
+    <script>
+
+const importObject = { importModule: {} };
+let instance;
+function instantiate() {
+    const fp = fetch('imports.wasm');
+    WebAssembly.instantiateStreaming(fp, importObject)
+        .then(result => {
+            instance = result.instance;
+        })
+        .catch(error => {
+            if (error instanceof WebAssembly.LinkError) {
+                console.log(`LinkError: ${error.message}`);
+            }
+        })
+}
+
+    </script>
+</body>
+
+</html>

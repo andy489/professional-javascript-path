@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly Imports</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Use imports with a WebAssembly.Instance</h1>
+    </header>
+    <main>
+
+    </main>
+    <script>
+
+        function useImports() {
+            const fileName = 'imports.wasm';
+            const fetchPromise = fetch(fileName);
+            const importObject = {
+                importModule: {
+                    importFunctionOne: (param) => { console.log(`importFunctionOne called with ${param}`) },
+                    importFunctionTwo: (param) => { console.log(`importFunctionTwo called with ${param}`) }
+                }
+            }
+            WebAssembly.instantiateStreaming(fetchPromise, importObject)
+                .then(result => {
+                    const instance = result.instance;
+                    instance.exports.useImports();
+                })
+        }
+
+    </script>
+</body>
+
+</html>

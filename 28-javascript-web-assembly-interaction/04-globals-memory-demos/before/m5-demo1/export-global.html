@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly.Global</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly.Global - Export</h1>
+    </header>
+    <main></main>
+    <script>
+        let instance;
+       
+        function createInstanceWithGlobalExport() {
+            const fileName = 'export-global.wasm';
+            const fetchPromise = fetch(fileName);
+
+            WebAssembly.instantiateStreaming(fetchPromise)
+                .then(result => {
+                    instance = result.instance;
+                   
+                });
+        }
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebAssembly.Memory</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly Exceptions</h1>
+    </header>
+    <main></main>
+    <script>
+
+        let instance;
+        const exceptionTag = new WebAssembly.Tag({ parameters: ["i32"] });
+
+        const importObject = {
+            // extmod: {
+            //     exttag: exceptionTag,
+            // },
+        };
+        function instantiateWithTag() {
+            WebAssembly.instantiateStreaming(fetch("tag.wasm"), importObject)
+                .then((result) => {
+                    instance = result.instance;
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
+
+        function callExportedFunction() {
+            try {
+                instance.exports.run();
+            }
+            catch (error) {
+                console.error(error);
+
+                if (error.is(exceptionTag)) {
+                    console.log(`getArg 0 : ${error.getArg(exceptionTag, 0)}`);
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

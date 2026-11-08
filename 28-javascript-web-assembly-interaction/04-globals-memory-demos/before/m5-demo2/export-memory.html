@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebAssembly.Memory</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly.Memory Exporting</h1>
+    </header>
+    <main></main>
+    <script>
+        
+        let instance;
+        function instantiateWithMemory() {
+            WebAssembly.instantiateStreaming(fetch('export-memory.wasm'), importObject)
+                .then(result => {
+                    instance = result.instance;
+                   
+                });
+        }
+
+        function readString(offset, length) {
+            const bytes = new Uint8Array(memory.buffer, offset, length);
+            const str = new TextDecoder('utf8').decode(bytes);
+            console.log(str);
+        }
+    </script>
+</body>
+
+</html>

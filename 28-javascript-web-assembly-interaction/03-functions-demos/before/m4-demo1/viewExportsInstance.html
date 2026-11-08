@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly.Instance.exports</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Viewing Exports from a WebAssembly.Instance</h1>
+    </header>
+    <main>
+
+    </main>
+    <script>
+
+        function showExportsInstance(fileName) {
+            const fetchPromise = fetch(fileName);
+            WebAssembly.instantiateStreaming(fetchPromise)
+                .then(result => {
+                    const instance = result.instance;
+                    
+                })
+        }
+    </script>
+</body>
+</html>

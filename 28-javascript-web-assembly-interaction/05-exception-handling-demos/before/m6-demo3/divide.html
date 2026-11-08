@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebAssembly Debugging</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly Debugging</h1>
+    </header>
+    <main></main>
+    <script>
+
+        let instance;
+        function instantiate() {
+            WebAssembly.instantiateStreaming(fetch('divide.wasm'))
+                .then(result => {
+                    instance = result.instance;
+                });
+        }
+
+
+        function divide(num, denom) {
+            try {
+                const result = instance.exports.divide(num, denom);
+
+            } catch (error) {
+                if (error instanceof WebAssembly.RuntimeError) {
+                    console.log(`RuntimeError: ${error.message}`);
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

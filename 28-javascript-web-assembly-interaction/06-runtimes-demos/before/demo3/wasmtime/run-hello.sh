@@ -1,0 +1,1 @@
+wasmtime hello.wasm

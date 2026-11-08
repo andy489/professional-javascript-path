@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <title>instantiateStreaming</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly.Memory.shared === true</h1>
+    </header>
+    <main>
+    </main>
+    <script>
+
+        const memory = new WebAssembly.Memory({
+            initial: 10,
+            maximum: 100,
+            shared: true,
+        });
+        const importObject = {
+            codeModule: { readString },
+            memoryModule: { memory }
+        };
+        let instance;
+        function instantiateWithMemory() {
+            const fetchPromise = fetch('shared-memory.wasm');
+            WebAssembly.instantiateStreaming(fetchPromise, importObject)
+                .then(result => {
+                    instance = result.instance;
+                });
+        }
+
+
+        function readString(offset, length) {
+            const bytes = new Uint8Array(memory.buffer);
+            const result = new Uint8Array(length);
+            for (let i = 0; i < length; i++) {
+                result[i] = Atomics.load(bytes, offset + i);
+            }
+            const str = new TextDecoder('utf8').decode(result);
+            console.log(str);
+        }
+    </script>
+</body>
+
+</html>

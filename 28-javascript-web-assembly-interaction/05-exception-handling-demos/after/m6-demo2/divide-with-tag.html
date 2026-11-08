@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebAssembly.Memory</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly Exception: RuntimeException (i.e. trap)</h1>
+    </header>
+    <main></main>
+    <script>
+
+const divideErrorTag = new WebAssembly.Tag({ parameters: ["i32"] });
+const importObject = {
+    extmod: {
+        divideError: divideErrorTag,
+    },
+};
+let instance;
+function instantiate() {
+    const fp = fetch('divide-with-tag.wasm');
+    WebAssembly.instantiateStreaming(fp, importObject)
+        .then(result => {
+            instance = result.instance;
+        });
+}
+
+function divide(num, denom) {
+    try {
+        const result = instance.exports.divide(num, denom);
+    } catch (error) {
+        if (error.is(divideErrorTag)) {
+            console.log(`Divide Error : ${error.getArg(divideErrorTag, 0)}`);
+        }
+    }
+}
+
+    </script>
+</body>
+
+</html>

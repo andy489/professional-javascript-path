@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly.Global</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly.Global - Import</h1>
+    </header>
+    <main></main>
+    <script>
+        
+        let instance;
+
+        function createInstanceWithGlobalImport() {
+            const fileName = 'import-global.wasm';
+            const fetchPromise = fetch(fileName);
+            const importObject = {
+             
+            };
+
+            WebAssembly.instantiateStreaming(fetchPromise, importObject)
+                .then(result => {
+                    instance = result.instance;
+                });
+        }
+    </script>
+</body>
+
+
+</html>

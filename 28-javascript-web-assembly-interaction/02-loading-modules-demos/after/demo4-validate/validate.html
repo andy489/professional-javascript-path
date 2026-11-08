@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly.validate</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Validate a WebAssembly Module with WebAssembly.validate</h1>
+    </header>
+    <main>
+        <aside>
+            <h5>WASM Loading Info</h5>
+            <div id="log"></div>
+        </aside>
+        <form>
+            <p><strong>Enter the wasm file name</strong></p>
+            <p>
+                <input type="text" id="wasm_file">
+            </p>
+            <button>Validate Module</button>
+            <button type="reset">Reset</button>
+        </form>
+    </main>
+    <script>
+
+        function validateWASM(fileName) {
+            addToLog(`fetching ${fileName}`);
+            fetch(fileName)
+            .then(response => {
+                addToLog(`got response ${fileName}`);
+                return response.arrayBuffer();
+            }).then(bytes => {
+                addToLog(`Validating ${fileName}`);
+                return WebAssembly.validate(bytes)
+            }).then(validateResult => {
+                if (validateResult) {
+                    // report Module is valid
+                    addToLog(`${fileName} is valid`);
+                } else {
+                    // report Module is invalid
+                    addToLog(`${fileName} is INVALID!`);
+                }
+            });
+        }
+
+        let logStart;
+        function addToLog(message) {
+            const item = document.createElement('p');
+            let time;
+            if (!logStart) {
+                logStart = Date.now();
+                time = 0;
+            } else {
+                const millis = Date.now() - logStart;
+                time = Math.floor(millis);
+            }
+            const content = document.createTextNode(`${time}ms: ${message}`);
+            item.appendChild(content);
+            log.appendChild(item);
+        }
+
+        addEventListener('submit', (event) => {
+            resetState();
+            const formElement = document.querySelector('#wasm_file');
+            const fileName = formElement.value;
+            validateWASM(fileName);
+            event.preventDefault();
+        });
+
+        addEventListener('reset', (event) => {
+            resetState();
+        });
+
+        function resetState() {
+            logStart = null;
+            while (log.firstChild) {
+                log.removeChild(log.firstChild);
+            }
+        }
+    </script>
+</body>
+
+</html>

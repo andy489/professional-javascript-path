@@ -1,0 +1,12 @@
+{
+  "name": "divide-rust",
+  "version": "0.1.0",
+  "files": [
+    "divide_rust_bg.wasm",
+    "divide_rust.js",
+    "divide_rust.d.ts"
+  ],
+  "module": "divide_rust.js",
+  "types": "divide_rust.d.ts",
+  "sideEffects": false
+}

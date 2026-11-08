@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebAssembly.Memory</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly Exception: CompileError</h1>
+    </header>
+    <main></main>
+    <script>
+
+        let instance;
+        function instantiate() {
+            WebAssembly.instantiateStreaming(fetch('compile-error.wasm'), { importModule: {} })
+                .then(result => {
+                    instance = result.instance;
+                })
+                .catch(error => {
+                    if (error instanceof WebAssembly.CompileError) {
+                        console.log(`CompileError ${error.message}`); 
+                        console.log(error.name); 
+                        console.log(error.fileName); 
+                        console.log(error.lineNumber);
+                        console.log(error.columnNumber);
+                        console.log(error.stack);
+                    }
+                })
+        }
+
+    </script>
+</body>
+
+</html>

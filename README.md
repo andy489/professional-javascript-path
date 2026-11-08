@@ -33,6 +33,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 25 | [JavaScript Transpiling and Polyfills for Extended Support](25-javascript-transpiling-polyfills-extended-support/README.md) | Transpiling ES6+ to ES5 with Babel, polyfilling missing built-ins with core-js, and TypeScript transpilation with Webpack |
 | 26 | [JavaScript Generators](26-javascript-generators/README.md) | Generator functions, `yield`, lazy evaluation, async generators, streaming, design patterns, debugging, and production concerns |
 | 27 | [JavaScript Proxy Objects and Reflect](27-javascript-proxy-objects-reflect/README.md) | How JS objects work internally, creating proxies, handler traps (`get`/`set`/`apply`/`construct`/`ownKeys`), iteration control, function throttling, revocable proxies, and the `Reflect` API |
+| 28 | [WebAssembly Interaction with JavaScript](28-javascript-web-assembly-interaction/README.md) | Loading and instantiating Wasm modules, function/global/memory interop, exception handling, server-side runtimes (WASI, Wasmtime), and toolchains (Emscripten, Rust wasm-pack, Blazor) |
 
 ## Usage
 

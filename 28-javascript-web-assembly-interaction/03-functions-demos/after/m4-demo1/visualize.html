@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly.Instance.exports Visualization</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <div id="wasmViz"></div>
+    <script type="module">
+        import visualizeWASMInstance from './visualize-wasm.js'
+        const element = document.querySelector('#wasmViz')
+
+        const wasmFile = 'no-import.wasm';
+        const fetchPromise = fetch(wasmFile);
+
+        WebAssembly.instantiateStreaming(fetchPromise)
+            .then((result) => {
+                // Use the WebAssembly Instance
+                const instance = result.instance;
+                visualizeWASMInstance(wasmFile, instance, element)
+
+            });
+
+        function cls(offset, length) {
+            const bytes = new Uint8Array(memory.buffer, offset, length);
+            const str = new TextDecoder('utf8').decode(bytes);
+            console.log(str);
+        }
+    </script>
+
+</body>
+
+</html>

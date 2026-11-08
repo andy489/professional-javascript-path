@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Quicksort</title>
+    <link rel="stylesheet" href="simple.css" />
+    <style>
+        #loadingContainer.showing {
+            display: block;
+        }
+
+        #loadingContainer {
+            display: none;
+        }
+
+        #loading {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            -webkit-animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>JavaScript Quicksort</h1>
+    </header>
+    <main>
+        <div id="loadingContainer" class="hiding">
+            <div>Loading records...</div>
+            <div id="loading"></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="#" data-col="0">Employee ID</a></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Hired Date</th>
+                    <th><a href="#" data-col="1">Salary</a></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </main>
+    <script>
+        const memory = new WebAssembly.Memory({
+            initial: 10,
+            maximum: 100,
+            shared: true,
+        });
+
+        let module;
+        WebAssembly.compileStreaming(fetch('shared-quicksort.wasm'))
+            .then(result => {
+                // TODO: fix race condition here
+                module = result;
+            });
+
+
+        function sortData() {
+            const sortColumn = sortColumns[sortColumnIndex];
+            sortArray = employeeData.map(item => { return item[sortColumn] });
+            parallelQuicksort(sortArray).then(sortedArray => {
+                sortArray = sortedArray;
+                loadTable();
+            });
+            console.log('sort data complete');
+
+        }
+
+        let employeeData;
+        let sortArray;
+        let sortColumnIndex;
+        const sortColumns = ['emp_no', 'salary'];
+        const tbody = document.querySelector('tbody');
+        const loader = document.querySelector('#loadingContainer');
+
+        document.querySelectorAll('a').forEach(el => {
+            el.addEventListener('click', event => {
+                const clickedEl = event.srcElement;
+                sortColumnIndex = clickedEl.getAttribute('data-col');
+                const timeTaken = measureFunctionTime(function () {
+                    sortData();
+                });
+                console.log(`sortData took ${timeTaken} milliseconds to run at ${Date.now()}.`);
+            });
+        });
+
+        function loadTable() {
+            loader.classList.toggle('showing');
+            tbody.replaceChildren();
+            let newRows = '';
+            const sortColumn = sortColumns[sortColumnIndex];
+            sortArray.forEach(columnData => {
+                const employee = employeeData.find(item => {
+                    return item[sortColumn] === columnData;
+                });
+                newRows += `<tr><td>${employee.emp_no}</td><td>${employee.first_name}</td><td>${employee.last_name}</td><td>${employee.hire_date}</td><td>${employee.salary}</td></tr>`;
+            });
+
+            setTimeout(() => {
+                tbody.innerHTML = newRows;
+                loader.classList.toggle('showing');
+            }, 1000)
+        }
+
+        fetch('employees.json')
+            .then(response => {
+                return response.json();
+            }).then(json => {
+                employeeData = json.slice(0, 10000);
+                sortColumnIndex = 0;
+                sortData();
+            })
+
+        function measureFunctionTime(fn) {
+            const startTime = performance.now();
+            // call the function
+            fn();
+            const endTime = performance.now();
+            return endTime - startTime;
+        }
+
+
+        function sortInWorker(arr, start) {
+            return new Promise((resolve, reject) => {
+                const worker = new Worker('wasm-webworker-sort.js');
+
+                worker.onmessage = event => {
+                    resolve(event.data);
+                    worker.terminate();
+                };
+
+                worker.onerror = error => {
+                    reject(error);
+                    worker.terminate();
+                };
+
+                worker.postMessage({ memory, module, arrayToSort: arr, start });
+            });
+        }
+
+        async function parallelQuicksort(arr) {
+            const pivot = arr[0];
+            const left = [];
+            const right = [];
+
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] < pivot) {
+                    left.push(arr[i]);
+                } else {
+                    right.push(arr[i]);
+                }
+            }
+
+            const results = await Promise.all([sortInWorker(left, 0), sortInWorker(right, left.length)]);
+            const { array: leftSorted }  = results[0];
+            const { array: rightSorted } = results[1];
+            let merged = new Int32Array(leftSorted.length + rightSorted.length);
+            merged.set(leftSorted, 0);
+            merged.set(rightSorted, leftSorted.length);
+            return merged;
+
+        }
+
+
+    </script>
+</body>
+
+</html>

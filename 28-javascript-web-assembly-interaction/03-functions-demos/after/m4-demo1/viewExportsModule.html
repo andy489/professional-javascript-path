@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly.Module.exports</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Reflecting Exports using WebAssembly.Module.exports</h1>
+    </header>
+    <main>
+      
+    </main>
+    <script>
+
+        function showExportsModule(fileName) {
+            const fetchPromise = fetch(fileName);
+            WebAssembly.compileStreaming(fetchPromise)
+                .then(module => {
+                    const exports = WebAssembly.Module.exports(module);
+                    exports.forEach(wasmExport => {
+                        console.log(`Export ${JSON.stringify(wasmExport)}`);
+                    })
+                });
+        }        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebAssembly.Memory</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly.Memory Importing</h1>
+    </header>
+    <main></main>
+    <script>
+        const memory = new WebAssembly.Memory({ initial: 1, shared: true, maximum: 100 });
+        const importObject = {
+            codeModule: { readString },
+            memoryModule: { memory }
+        };
+        let instance;
+        function instantiateWithMemory() {
+            WebAssembly.instantiateStreaming(fetch('shared-memory.wasm'), importObject)
+                .then(result => {
+                    instance = result.instance;
+                });
+        }
+
+        function readString(offset, length) {
+            const bytes = new Uint8Array(memory.buffer, offset, length);
+            const str = new TextDecoder('utf8').decode(bytes);
+            console.log(str);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Quicksort</title>
+    <link rel="stylesheet" href="simple.css" />
+    <style>
+        #loadingContainer.showing {
+            display: block;
+        }
+
+        #loadingContainer {
+            display: none;
+        }
+
+        #loading {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            -webkit-animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>JavaScript Quicksort</h1>
+    </header>
+    <main>
+        <div id="loadingContainer" class="hiding">
+            <div>Loading records...</div>
+            <div id="loading"></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="#" data-col="0">Employee ID</a></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Hired Date</th>
+                    <th><a href="#" data-col="1">Salary</a></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </main>
+    <script>
+        let instance;
+        let quicksort = javaScriptQuicksort;
+
+        WebAssembly.instantiateStreaming(fetch('quicksort.wasm'))
+            .then(result => {
+                instance = result.instance;
+            });
+
+        function sortData() {
+            const sortColumn = sortColumns[sortColumnIndex];
+            sortArray = employeeData.map(item => { return item[sortColumn] });
+            const timeTaken = measureFunctionTime(function () {
+                quicksort(sortArray, 0, sortArray.length - 1);
+            });
+            console.log(`${quicksort.name} took ${timeTaken} milliseconds to run.`);
+        }
+
+        function wasmQuicksort(array, left, right) {
+            const carray = new Int32Array(instance.exports.memory.buffer, 0, array.length);
+            carray.set(array);
+            instance.exports.quicksort(carray.byteOffset, left, right);
+            sortArray = carray;
+        }
+
+        function javaScriptQuicksort(array, left, right) {
+            // base case: return if the left index is greater than or equal to the right index
+            if (left >= right) {
+                return;
+            }
+
+            // choose a pivot element
+            const pivot = array[Math.floor((left + right) / 2)];
+
+            // partition the array around the pivot
+            const partitionIndex = partition(array, left, right, pivot);
+
+            // sort the left and right partitions
+            javaScriptQuicksort(array, left, partitionIndex - 1);
+            javaScriptQuicksort(array, partitionIndex, right);
+        }
+
+        function partition(array, left, right, pivot) {
+            // loop through the array until the left index is greater than the right index
+            while (left <= right) {
+                // find the next element to swap from the left side
+                while (array[left] < pivot) {
+                    left++;
+                }
+
+                // find the next element to swap from the right side
+                while (array[right] > pivot) {
+                    right--;
+                }
+
+                // swap the elements if the left index is less than or equal to the right index
+                if (left <= right) {
+                    [array[left], array[right]] = [array[right], array[left]];
+                    left++;
+                    right--;
+                }
+            }
+
+            // return the final partition index
+            return left;
+        }
+
+
+        let employeeData;
+        let sortArray;
+        let sortColumnIndex;
+        const sortColumns = ['emp_no', 'salary'];
+        const tbody = document.querySelector('tbody');
+        const loader = document.querySelector('#loadingContainer');
+
+        document.querySelectorAll('a').forEach(el => {
+            el.addEventListener('click', event => {
+                const clickedEl = event.srcElement;
+                sortColumnIndex = clickedEl.getAttribute('data-col');
+                sortData();
+                loadTable();
+            });
+        });
+
+        function loadTable() {
+            loader.classList.toggle('showing');
+            tbody.replaceChildren();
+            let newRows = '';
+            const sortColumn = sortColumns[sortColumnIndex];
+            sortArray.forEach(columnData => {
+                const employee = employeeData.find(item => {
+                    return item[sortColumn] === columnData;
+                });
+                newRows += `<tr><td>${employee.emp_no}</td><td>${employee.first_name}</td><td>${employee.last_name}</td><td>${employee.hire_date}</td><td>${employee.salary}</td></tr>`;
+            });
+
+            setTimeout(() => {
+                tbody.innerHTML = newRows;
+                loader.classList.toggle('showing');
+            }, 1000)
+        }
+
+        fetch('employees.json')
+            .then(response => {
+                return response.json();
+            }).then(json => {
+                employeeData = json.slice(0, 10000);
+                sortColumnIndex = 0;
+                sortData();
+                loadTable();
+            })
+
+        function measureFunctionTime(fn) {
+            const startTime = performance.now();
+            // call the function
+            fn();
+            const endTime = performance.now();
+            return endTime - startTime;
+        }
+    </script>
+</body>
+
+</html>

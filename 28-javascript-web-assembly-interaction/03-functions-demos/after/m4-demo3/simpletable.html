@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly.Table</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly.Table</h1>
+    </header>
+    <main></main>
+    <script>
+        const table = new WebAssembly.Table({ initial: 2, element: 'anyfunc' });
+        let instance;
+        function createInstanceWithTable() {
+            const fileName = 'simpletable.wasm';
+            const fetchPromise = fetch(fileName);
+            const importObject = {
+                "js": { table }
+            }
+
+            WebAssembly.instantiateStreaming(fetch('table.wasm'), importObject)
+                .then(result => {
+                    instance = result.instance;
+
+                })
+        }
+    </script>
+</body>
+
+</html>

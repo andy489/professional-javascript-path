@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly.Module.imports</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Show Imports With WebAssembly.Module.imports</h1>
+    </header>
+    <main>
+      
+    </main>
+    <script>
+
+        function showImports(fileName) {
+            const fetchPromise = fetch(fileName);
+            WebAssembly.compileStreaming(fetchPromise)
+                .then(module => {
+                    const imports = WebAssembly.Module.imports(module);
+                    imports.forEach(wasmImport => {
+                        console.log(`Import ${JSON.stringify(wasmImport)}`);
+                    })
+                });
+        }
+    </script>
+</body>
+
+</html>

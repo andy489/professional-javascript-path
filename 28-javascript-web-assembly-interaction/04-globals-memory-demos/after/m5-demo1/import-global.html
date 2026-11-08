@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <title>WebAssembly.Global</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+
+<body>
+    <header>
+        <h1>WebAssembly.Global - Import</h1>
+    </header>
+    <main></main>
+    <script>
+        const globalConfig = { value: 'i32', mutable: true };
+        const importedGlobal = new WebAssembly.Global(globalConfig, 0);
+
+        let instance;
+
+        function createInstanceWithGlobalImport() {
+            const fileName = 'import-global.wasm';
+            const fetchPromise = fetch(fileName);
+            const importObject = {
+                "gs": { importedGlobal }
+            };
+
+            WebAssembly.instantiateStreaming(fetchPromise, importObject)
+                .then(result => {
+                    instance = result.instance;
+                });
+        }
+    </script>
+</body>
+
+
+</html>

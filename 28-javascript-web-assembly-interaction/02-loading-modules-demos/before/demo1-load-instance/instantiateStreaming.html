@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <title>instantiateStreaming</title>
+    <link rel="stylesheet" href="simple.css" />
+</head>
+<body>
+    <header>
+        <h1>Create a WebAssembly Instance with WebAssembly.instantiateStreaming</h1>   
+    </header>
+    <main>
+        <aside>
+            <h5>WASM Loading Info</h5>
+            <div id="log"></div>
+        </aside>
+        <form>
+            <p><strong>Enter the wasm file name</strong></p>
+            <p>
+                <input type="text" id="wasm_file">
+            </p>
+            <button>Create Instance</button>
+            <button type="reset">Reset</button>
+        </form>
+    </main>
+    <script>
+        
+        function loadWASM(fileName) {
+           
+        }
+
+        const log = document.querySelector('#log');
+        let logStart;
+        function addToLog(message) {
+            const item = document.createElement('p');
+            let time;
+            if(!logStart) {
+                logStart = Date.now();
+                time = 0;
+            } else {
+                const millis = Date.now() - logStart;
+                time = Math.floor(millis);
+            }
+            const content = document.createTextNode(`${time}ms: ${message}`);
+            item.appendChild(content);
+            log.appendChild(item);
+        }
+
+        addEventListener('submit', (event) => {
+            resetState();
+            const formElement = document.querySelector('#wasm_file');
+            const fileName = formElement.value;
+            loadWASM(fileName); 
+            event.preventDefault();
+        });
+
+        addEventListener('reset', (event) => {
+           resetState();
+        });
+        
+        function resetState() {
+            logStart = null;
+            while (log.firstChild) {
+                log.removeChild(log.firstChild);
+            }
+        }
+    </script>
+</body>
+</html>
