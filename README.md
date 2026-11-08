@@ -31,6 +31,7 @@ A structured, notebook-based learning path for JavaScript — from first princip
 | 23 | [Modern JavaScript: The Efficiency Upgrade](23-modern-javascript-efficiency-upgrade/README.md) | Template literals, tagged templates, control flow patterns, Promise.try/allSettled/using, iteration methods, Map/Set/WeakMap/WeakSet, closures, function factories, and currying |
 | 24 | [JavaScript Performance Playbook](24-javascript-performance-playbook/README.md) | Best practices, legacy modernisation, memory leaks, DOM optimisation, variable scope, sync vs. async, throttling/debouncing, caching, and compression |
 | 25 | [JavaScript Transpiling and Polyfills for Extended Support](25-javascript-transpiling-polyfills-extended-support/README.md) | Transpiling ES6+ to ES5 with Babel, polyfilling missing built-ins with core-js, and TypeScript transpilation with Webpack |
+| 26 | [JavaScript Generators](26-javascript-generators/README.md) | Generator functions, `yield`, lazy evaluation, async generators, streaming, design patterns, debugging, and production concerns |
 
 ## Usage
 
